@@ -1,6 +1,9 @@
 const cartItems = document.querySelector('.cart__items');
+const items = document.querySelector('.items');
 const totalPrice = document.querySelector('.total-price');
 const emptyCart = document.querySelector('.empty-cart');
+const search = document.querySelector('#search');
+const searchBtn = document.querySelector('#search-btn');
 
 const totalCalculator = () => {
   const list = [];
@@ -68,8 +71,8 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-const addItemSection = async () => {
-  const data = await fetchProducts('computador');
+const addItemSection = async (itemName) => {
+  const data = await fetchProducts(itemName);
   const items = document.querySelector('.items');
   data.results.forEach(({ id, title, thumbnail }) => {
     const productElement = createProductItemElement({
@@ -97,9 +100,17 @@ const loaded = () => {
   loadingText.remove();
 };
 
+searchBtn.addEventListener('click', async () => {
+  const itemName = search.value;
+  while (items.firstChild) items.firstChild.remove();
+  loading();
+  await addItemSection(itemName);
+  loaded();
+})
+
 window.onload = async () => {
   loading();
-  await addItemSection();
+  await addItemSection('computador');
   loaded();
   cartItems.innerHTML = getSavedCartItems();
   cartItems.childNodes.forEach((li) => li.addEventListener('click', cartItemClickListener));

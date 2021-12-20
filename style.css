@@ -1,3 +1,16 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+}
+
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+input {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -45,13 +58,52 @@
 }
 
 .cart {
+  border: 2px solid blue;
+  border-radius: 5px;
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  height: fit-content;
+  margin: 5px;
+  padding: 10px;
 }
 
 .cart .cart__title {
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+.cart .price-text {
+  font-size: 14pt;
+  text-align: center;
+}
+
+.cart .cart__item {
+  margin: 10px 5px;
+}
+
+.cart .cart__item:nth-child(odd) {
+  background-color: rgb(218, 218, 218);
+}
+
+.empty-cart {
+  background-color: rgb(204, 54, 54);
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+header {
+  background-color: blue;
+  color: white;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+}
+
+header h3 {
+  margin: 0;
 }
