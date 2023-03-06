@@ -2,6 +2,14 @@ Este repositório contém um projeto desenvolvido enquanto pessoa estudante da @
 
 ---
 
+## Deployment
+
+Projeto disponível para vizualização no seguinte endereço:
+
+https://rafaeldejesusl.github.io/ProjectShoppingCart/
+
+---
+
 ## Habilidades
 
 Nesse projeto, você será capaz de:
